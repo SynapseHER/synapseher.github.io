@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SynapseHER</title>
+<!--
+  HOW TO EDIT THIS PAGE
+  - Text: change anything between the tags, e.g. <h1>SynapseHER</h1>
+  - Colors: change the values in :root just below (e.g. --accent)
+  - Boxes: copy one <a class="card ...">...</a> or <div class="card">...</div> block and paste it to add another
+-->
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0b0d;          /* page background (black) */
+    --surface: #16151a;     /* card background (slightly lighter black) */
+    --text: #ffffff;        /* main text (white) */
+    --muted: #b9b4c4;       /* softer grey text */
+    --accent: #a66cff;      /* purple accent — change to recolor buttons, links, dates */
+    --accent-soft: #2a1f3d; /* dark purple for tags and avatars */
+    --border: #2a2830;      /* thin lines between sections */
+    --nav-bg: rgba(11,11,13,.9);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Inter, system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+  a { color: var(--accent); }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+  nav { position: sticky; top: 0; background: var(--nav-bg); backdrop-filter: blur(6px); border-bottom: 1px solid var(--border); z-index: 10; }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 60px; }
+  .logo { font-family: Fraunces, serif; font-size: 1.2rem; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+  .logo img { width: 34px; height: 34px; }
+  .title-row { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .title-row img { width: clamp(64px, 12vw, 104px); height: auto; }
+  nav ul { list-style: none; display: flex; gap: 22px; }
+  nav ul a { text-decoration: none; color: var(--muted); font-size: .95rem; }
+  nav ul a:hover { color: var(--accent); }
+
+  header { padding: 90px 0 70px; }
+  .tag { display: inline-block; background: var(--accent-soft); color: var(--accent); font-weight: 600; font-size: .8rem; padding: 4px 12px; border-radius: 99px; margin-bottom: 18px; }
+  h1 { font-family: Fraunces, serif; font-size: clamp(2.2rem, 6vw, 3.6rem); line-height: 1.1; max-width: 14ch; }
+  header p { color: #e0b0ff; /* mauve tagline */ font-size: 1.15rem; max-width: 52ch; margin: 18px 0 30px; }
+  .btn { display: inline-block; background: var(--accent); color: #0b0b0d; text-decoration: none; padding: 12px 22px; border-radius: 8px; font-weight: 600; }
+  .btn.ghost { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); margin-left: 10px; }
+
+  section { padding: 60px 0; border-top: 1px solid var(--border); }
+  h2 { font-family: Fraunces, serif; font-size: 1.9rem; margin-bottom: 8px; }
+  .lead { color: var(--muted); margin-bottom: 30px; max-width: 60ch; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
+  .card-link { display: block; text-decoration: none; color: var(--text); transition: border-color .2s, transform .2s; }
+  .card-link:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .card.card-link p { color: var(--accent); }
+  .card h3 { font-size: 1.05rem; margin-bottom: 6px; }
+  .card p { color: var(--muted); font-size: .95rem; }
+  .date { font-size: .8rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 8px; }
+  .placeholder-name { color: var(--accent); }
+  .mission { font-size: 1.1rem; color: var(--text); max-width: 65ch; background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 12px; padding: 24px 28px; }
+  .email-line { font-size: 1.15rem; font-weight: 600; margin: -10px 0 24px; }
+  .email-line a { color: #fff; }
+  .avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; font-weight: 600; margin-bottom: 12px; }
+
+  .join { background: linear-gradient(135deg, #5b2a9e, #a66cff); color: #fff; border-radius: 16px; padding: 44px 32px; text-align: center; }
+  .join h2 { color: #fff; }
+  .join p { opacity: .9; margin: 8px auto 24px; max-width: 50ch; }
+  .join .btn { background: #fff; color: #3d1c6e; }
+
+  footer { padding: 30px 0 50px; color: var(--muted); font-size: .9rem; text-align: center; }
+
+  @media (max-width: 640px) {
+    nav ul { display: none; }
+    .btn.ghost { margin: 12px 0 0; }
+    header { padding: 60px 0 50px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo"><img src="images/logo.png" alt="">SynapseHER</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#mission">Mission</a></li>
+      <li><a href="#interviews">Interviews</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#join">Join</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <span class="tag">Graduate student club · Biology</span>
+    <div class="title-row">
+      <img src="images/logo.png" alt="SynapseHER logo">
+      <h1>SynapseHER</h1>
+    </div>
+    <p>An organization dedicated to closing the gender gap in Science.</p>
+    <a href="#join" class="btn">Join the club</a>
+    <a href="#events" class="btn ghost">Upcoming events</a>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About us</h2>
+    <p class="lead">Learn about the founders of SynapseHER</p>
+    <div class="grid">
+      <!-- Each founder box links to the founders page -->
+      <a class="card card-link" href="founders.html#rana"><h3>Rana Abdelhalim</h3><p>Co-founder · Read more →</p></a>
+      <a class="card card-link" href="founders.html#yujia"><h3>Yujia Li</h3><p>Co-founder · Read more →</p></a>
+    </div>
+  </div>
+</section>
+
+<section id="mission">
+  <div class="wrap">
+    <h2>Mission Statement</h2>
+    <!-- Replace the text below with your mission statement -->
+    <p class="mission">Our mission statement is coming soon. Replace this text with a paragraph describing what SynapseHER stands for and what it hopes to achieve.</p>
+  </div>
+</section>
+
+<section id="interviews">
+  <div class="wrap">
+    <h2>Interviews with Inspiring Scientists</h2>
+    <p class="lead">Conversations with scientists whose work and stories inspire us.</p>
+    <div class="grid">
+      <!-- Each interview box links to the interviews page. Change "Insert name" to the scientist's name. -->
+      <a class="card card-link" href="interviews.html#interview-1"><h3 class="placeholder-name">Insert name</h3><p>Read the interview →</p></a>
+      <a class="card card-link" href="interviews.html#interview-2"><h3 class="placeholder-name">Insert name</h3><p>Read the interview →</p></a>
+    </div>
+  </div>
+</section>
+
+<section id="events">
+  <div class="wrap">
+    <h2>Upcoming events</h2>
+    <p class="lead">Stay tuned for future events!</p>
+  </div>
+</section>
+
+<section id="join">
+  <div class="wrap">
+    <div class="join">
+      <h2>Want to get involved?</h2>
+      <p>Email us to join our mailing list, share ideas, or get involved.</p>
+      <p class="email-line"><a href="mailto:synapseher@gmail.com">synapseher@gmail.com</a></p>
+      <a class="btn" href="mailto:synapseher@gmail.com">Email us</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 SynapseHER · Made by graduate students</div>
+</footer>
+
+</body>
+</html>

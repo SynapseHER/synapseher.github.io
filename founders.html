@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our Founders · SynapseHER</title>
+<!--
+  HOW TO EDIT THIS PAGE
+  - Each founder is one <article class="founder"> block.
+  - Change the description text between <p> and </p>.
+  - To swap a photo, upload a new image to the images folder and change the src="images/..." name.
+-->
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0b0d;
+    --surface: #16151a;
+    --text: #ffffff;
+    --muted: #b9b4c4;
+    --accent: #a66cff;
+    --accent-soft: #2a1f3d;
+    --border: #2a2830;
+    --nav-bg: rgba(11,11,13,.9);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Inter, system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  a { color: var(--accent); }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+  nav { position: sticky; top: 0; background: var(--nav-bg); backdrop-filter: blur(6px); border-bottom: 1px solid var(--border); z-index: 10; }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 60px; }
+  .logo { font-family: Fraunces, serif; font-size: 1.2rem; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+  .logo img { width: 34px; height: 34px; }
+  .back { text-decoration: none; color: var(--muted); font-size: .95rem; }
+  .back:hover { color: var(--accent); }
+
+  header { padding: 70px 0 30px; }
+  h1 { font-family: Fraunces, serif; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; }
+  header p { color: #e0b0ff; margin-top: 10px; }
+
+  .founder { display: grid; grid-template-columns: 300px 1fr; gap: 40px; align-items: start; padding: 50px 0; border-top: 1px solid var(--border); scroll-margin-top: 70px; }
+  .founder h2 { font-family: Fraunces, serif; font-size: 1.6rem; margin-bottom: 14px; }
+  .founder img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 14px; border: 1px solid var(--border); display: block; }
+  .bio { padding-top: 52px; }
+  .bio p { color: var(--muted); font-size: 1.05rem; }
+  .role { display: inline-block; background: var(--accent-soft); color: var(--accent); font-weight: 600; font-size: .8rem; padding: 4px 12px; border-radius: 99px; margin-bottom: 16px; }
+
+  footer { padding: 30px 0 50px; color: var(--muted); font-size: .9rem; text-align: center; border-top: 1px solid var(--border); }
+
+  @media (max-width: 700px) {
+    .founder { grid-template-columns: 1fr; gap: 20px; }
+    .founder img { max-width: 340px; }
+    .bio { padding-top: 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="logo"><img src="images/logo.png" alt="">SynapseHER</a>
+    <a href="index.html" class="back">← Back to home</a>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <h1>Meet our founders</h1>
+    <p>The people behind SynapseHER.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <article class="founder" id="rana">
+    <div>
+      <h2>Rana Abdelhalim</h2>
+      <img src="images/rana.jpg" alt="Rana Abdelhalim">
+    </div>
+    <div class="bio">
+      <span class="role">Co-founder</span>
+      <p>Description coming soon. Replace this text with a paragraph about Rana: her program and research, why she co-founded SynapseHER, and what she hopes the club will achieve.</p>
+    </div>
+  </article>
+
+  <article class="founder" id="yujia">
+    <div>
+      <h2>Yujia Li</h2>
+      <img src="images/yujia.jpg" alt="Yujia Li">
+    </div>
+    <div class="bio">
+      <span class="role">Co-founder</span>
+      <p>Description coming soon. Replace this text with a paragraph about Yujia: her program and research, why she co-founded SynapseHER, and what she hopes the club will achieve.</p>
+    </div>
+  </article>
+
+</main>
+
+<footer>
+  <div class="wrap">© 2026 SynapseHER · Made by graduate students</div>
+</footer>
+
+</body>
+</html>
